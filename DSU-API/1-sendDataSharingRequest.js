@@ -8,8 +8,6 @@ var myContract = new web3.eth.Contract(abi, contractAddr)
 var pk = ' '
 var sk = ' '
 
-
-
 function sendDataSharingRequest(_userAddr, _kindOfCertificate, _dataSize, _value, _extension) {
 	if (_kindOfCertificate < 1 || _kindOfCertificate > 2) {
 		console.log('证书类型有误')
@@ -36,6 +34,4 @@ function sendDataSharingRequest(_userAddr, _kindOfCertificate, _dataSize, _value
 	return true
 }
 
-
 console.log(sendDataSharingRequest(pk, 1, 100, 1000000, 'eyJkYXRhIjoiIn0='))
-
