@@ -9,36 +9,24 @@ var myContract = new web3.eth.Contract(abi, contractAddr)
 var pk = ' '
 var sk = ' '
 
-
 var obtainedSerialNumber = ' '
 var obtainedEncData = ' '
 var obtainedSignature = ' '
 
-
-
-
 function handleStorageReq(obtainedSerialNumber, obtainedEncData, obtainedSignature) {
-
-
-
 	myContract.methods.DSCs(obtainedSerialNumber).call({
 		from: pk,
 		gas: 3000000,
 	}).then(function (DSCres) {
-
 		console.log('DSCres', DSCres)
-
 
 		var myJSON = JSON.stringify(DSCres)
 		console.log('myJSON', myJSON)
-
 
 		var hashDSC = web3.eth.accounts.hashMessage(myJSON)
 
 		var recoverRes = web3.eth.accounts.recover(myJSON, obtainedSignature)
 		console.log('recoverRes', recoverRes)
-
-
 
 		var requestor = DSCres["requestor"]
 		console.log("requestor", requestor)
@@ -49,7 +37,6 @@ function handleStorageReq(obtainedSerialNumber, obtainedEncData, obtainedSignatu
 			console.log("数据共享用户身份验证失败")
 			return
 		}
-
 
 		myContract.methods.OnChainDSCs(obtainedSerialNumber).call({
 			from: pk,
