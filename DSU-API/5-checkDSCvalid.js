@@ -1,4 +1,3 @@
-
 var Web3 = require('web3')
 var web3 = new Web3(new Web3.providers.HttpProvider(' '))
 
@@ -10,9 +9,7 @@ var myContract = new web3.eth.Contract(abi, contractAddr)
 var pk = ' '
 var sk = ' '
 
-
 var DSCserialNumber = ' '	
-
 
 function checkDSCvalid(DSCserialNumber){
     
@@ -20,18 +17,13 @@ function checkDSCvalid(DSCserialNumber){
         from: pk,
         gas: 3000000,   
     }).then(function (DSCres) {
-        
         console.log('DSCres', DSCres)
-
         
         var myJSON = JSON.stringify(DSCres)
         console.log('myJSON', myJSON)
 
-        
         var hashDSC = web3.eth.accounts.hashMessage(myJSON)
 
-
-        
         myContract.methods.OnChainDSCs(DSCserialNumber).call({
             from: pk,
             gas: 3000000,   
