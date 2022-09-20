@@ -64,7 +64,6 @@ contract BCADS {
     }
     DataSharingRequest[] public DataSharingRequests;
     uint256 public DataSharingRequestsNum;
-
     
     struct DataSharingHandledResp {
         uint256 rspSerialNumber;
