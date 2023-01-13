@@ -1,6 +1,6 @@
-#TDS-NA
+# TDS-NA
 TDS-NA: Blockchain-based Trusted Data Sharing Scheme with PKI Authentication
-##Prerequisites
+## Prerequisites
 In this repository we implement a prototype of TDS-NA (The data content in the code is for demonstration examples).
 In order to deploy TDS-NA's smart contract, we need to lay out a private Ethereum network and build mock nodes to join the network.
 This demo only contains smart contract code and web3.js operation code for System entity.
